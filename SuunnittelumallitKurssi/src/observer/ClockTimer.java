@@ -42,9 +42,7 @@ public class ClockTimer extends Observable implements Runnable {
         while(true){
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-
-            }
+            } catch (InterruptedException ex) {}
             this.tick();
         }
     }

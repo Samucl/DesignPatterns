@@ -6,6 +6,5 @@ public class Main {
         AnalogClock analogClock = new AnalogClock(timer);
         DigitalClock digitalClock = new DigitalClock(timer);
         timer.start();
-        
     }
 }
