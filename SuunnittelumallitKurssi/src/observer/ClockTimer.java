@@ -32,6 +32,10 @@ public class ClockTimer extends Observable implements Runnable {
         setChanged();
         this.notifyObservers();
     }
+    
+    public void start(){
+        new Thread(this).start();
+    }
 
     @Override
     public void run() {
