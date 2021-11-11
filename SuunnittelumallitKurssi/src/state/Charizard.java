@@ -9,7 +9,6 @@ public class Charizard implements PokemonState{
 
     @Override
     public void kehity(Pokemon pokemon) {
-        System.out.println("Pokemon kehittyy");
-        pokemon.setState(this);
+        System.out.println("Charizard ei voi kehittyä pidemmälle");
     }
 }
