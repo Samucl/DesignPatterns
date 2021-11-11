@@ -22,7 +22,7 @@ public class AnalogClock implements Observer{
         int hour = timer.getHour();
         int minute = timer.getMinute();
         int second = timer.getSecond();
-        System.out.println("DigitalClock: " + hour + "h " + minute + "m " + second + "s");
+        System.out.println("AnalogClock: " + hour + "h " + minute + "m " + second + "s");
     }
     
 }
