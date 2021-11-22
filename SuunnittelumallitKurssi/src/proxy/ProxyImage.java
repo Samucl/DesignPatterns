@@ -23,7 +23,7 @@ public class ProxyImage implements Image {
     }
 
     @Override
-    public void showData() {
-        
+    public String showData() {
+        return filename;
     }
 }

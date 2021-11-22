@@ -27,7 +27,7 @@ public class RealImage implements Image {
     }
 
     @Override
-    public void showData() {
-        
+    public String showData() {
+        return filename;
     }
 }
