@@ -18,4 +18,14 @@ public class Charmeleon implements PokemonState {
         System.out.println("Pokemon kehittyy");
         pokemon.setState(new Charizard());
     }
+
+    @Override
+    public void acceptBonusVisitor(IBonusVisitor visitor) {
+        visitor.visit(this);
+    }
+
+    @Override
+    public void annaKehitysBonus() {
+        System.out.println("Pokemon sai bonuksen");
+    }
 }

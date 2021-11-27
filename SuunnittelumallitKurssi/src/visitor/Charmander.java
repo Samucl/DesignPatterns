@@ -18,4 +18,14 @@ public class Charmander implements PokemonState{
         System.out.println("Pokemon kehittyy");
         pokemon.setState(new Charmeleon());
     } 
+    
+    @Override
+    public void acceptBonusVisitor(IBonusVisitor visitor) {
+        visitor.visit(this);
+    }
+
+    @Override
+    public void annaKehitysBonus() {
+        System.out.println("Pokemon sai bonuksen");
+    }
 }

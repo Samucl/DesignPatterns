@@ -15,6 +15,17 @@ public class Charizard implements PokemonState{
 
     @Override
     public void kehity(Pokemon pokemon) {
-        System.out.println("Charizard ei voi kehittyä pidemmälle");
+        pokemon.setState(this);
+        System.out.println("Charizard on saavuttanut viimeisen tilan");
+    }
+    
+    @Override
+    public void acceptBonusVisitor(IBonusVisitor visitor) {
+        visitor.visit(this);
+    }
+
+    @Override
+    public void annaKehitysBonus() {
+        System.out.println("Pokemon sai bonuksen");
     }
 }
