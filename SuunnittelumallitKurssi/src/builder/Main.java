@@ -19,7 +19,7 @@ public class Main {
         
         System.out.println("\n NYT OLLAAN HESBURGERISSA\n");
         
-        System.out.println("\nKerros hampurilainen:\n");
+        System.out.println("Kerros hampurilainen:\n");
         kerrosHampurilainen.naytaHampurilainen();
         
         System.out.println("\nJuustoHampurilainen:\n");
