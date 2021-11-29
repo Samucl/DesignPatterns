@@ -17,5 +17,4 @@ public class EUtoNA_Adapteri implements NAsahkojarjestelma{
     public void kaytaNApistoketta() {
         EUpistoke.kaytaEUpistoketta();
     }
-    
 }

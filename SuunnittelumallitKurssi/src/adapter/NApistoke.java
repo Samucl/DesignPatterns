@@ -11,4 +11,5 @@ public class NApistoke implements NAsahkojarjestelma{
     public void kaytaNApistoketta() {
         System.out.println("Liitetty Amerikkalaiseen pistorasiaan");
     }
+    
 }
