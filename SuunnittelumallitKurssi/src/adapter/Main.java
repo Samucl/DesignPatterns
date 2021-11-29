@@ -17,7 +17,5 @@ public class Main {
         System.out.println("\nAmerikan A-tyyppinen pistoke C-tyypin adapterilla");
         naPistokeAdapterilla.annaTiedot();
         naPistokeAdapterilla.kaytaNApistoketta();
-        
-        
     }
 }

@@ -11,5 +11,4 @@ public class EUpistoke implements EUsahkojarjestelma{
     public void kaytaEUpistoketta() {
         System.out.println("Liitetty Eurooppalaiseen pistorasiaan");
     }
-    
 }
