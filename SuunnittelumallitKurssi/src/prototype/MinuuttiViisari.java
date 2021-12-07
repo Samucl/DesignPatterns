@@ -1,6 +1,6 @@
 package prototype;
 
-public class MinuuttiViisari implements Viisari {
+public class MinuuttiViisari implements Viisari, Cloneable {
 
     int minuutit;
     
@@ -13,10 +13,20 @@ public class MinuuttiViisari implements Viisari {
     public int getAika() {
         return minuutit;
     }
+    
+    @Override
+    public void setAika(int aika) {
+        minuutit = aika;
+    }
 
     @Override
     public void resetAika() {
         minuutit = 0;
     }
+    
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
+   }
     
 }

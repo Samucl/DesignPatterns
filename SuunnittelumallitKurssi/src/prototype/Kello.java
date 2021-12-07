@@ -4,16 +4,32 @@ import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Kello extends Thread {
+public class Kello extends Thread implements Cloneable{
     
     Viisari sekuntiViisari;
     Viisari minuuttiViisari;
     Viisari tuntiViisari;
+    String nimi;
     
-    public Kello (){
+    public Kello (String nimi){
         sekuntiViisari = new SekuntiViisari();
         minuuttiViisari = new MinuuttiViisari();
         tuntiViisari = new TuntiViisari();
+        this.nimi = nimi;
+    }
+    
+    public void vaihdaAikaa(int sec, int min, int hour){
+        sekuntiViisari.setAika(sec);
+        minuuttiViisari.setAika(min);
+        tuntiViisari.setAika(hour);
+    }
+    
+    public void setNimi(String nimi){
+        this.nimi = nimi;
+    }
+    
+    public String getNimi(){
+        return nimi;
     }
 
     @Override
@@ -33,11 +49,19 @@ public class Kello extends Thread {
                     }
                 }
                 
-                System.out.println(tuntiViisari.getAika() + ":" + minuuttiViisari.getAika() + ":" + sekuntiViisari.getAika());
+                System.out.println(nimi + ": " + tuntiViisari.getAika() + "." + minuuttiViisari.getAika() + "." + sekuntiViisari.getAika());
             } catch (InterruptedException ex) {
-                Logger.getLogger(Kello.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
     
+    @Override
+    public Kello clone() throws CloneNotSupportedException{
+        //Kello s = (Kello) super.clone(); //EI TOIMI KOSKA "EXTENDS THREAD"
+        Kello k = new Kello("kello"); //LUODAAN UUSI INSTANSSI KOSKA SÄIETTÄ EI VOI KLOONATA
+        k.sekuntiViisari = (Viisari)sekuntiViisari.clone();
+        k.minuuttiViisari = (Viisari)minuuttiViisari.clone();
+        k.tuntiViisari = (Viisari)tuntiViisari.clone();
+        return k;
+    }
 }
