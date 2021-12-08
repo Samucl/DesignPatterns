@@ -11,9 +11,13 @@ public class Main {
         kello2.start();
         kello2.setNimi("Kello2");
         System.out.println("Kopioitu");
+        
         Thread.sleep(5000);
         System.out.println("Muutetaan kello1:n aikaa");
-        
         kello1.vaihdaAikaa(5, 25, 1);
+        
+        Thread.sleep(5000);
+        System.out.println("Muutetaan kello2:n aikaa");
+        kello2.vaihdaAikaa(20, 5, 21);
     }
 }
