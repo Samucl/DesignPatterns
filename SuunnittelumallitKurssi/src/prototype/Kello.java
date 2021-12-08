@@ -57,7 +57,7 @@ public class Kello extends Thread implements Cloneable{
     
     @Override
     public Kello clone() throws CloneNotSupportedException{
-        //Kello s = (Kello) super.clone(); //EI TOIMI KOSKA "EXTENDS THREAD"
+        //Kello k = (Kello) super.clone(); //EI TOIMI KOSKA "EXTENDS THREAD"
         Kello k = new Kello("kello"); //LUODAAN UUSI INSTANSSI KOSKA SÄIETTÄ EI VOI KLOONATA
         k.sekuntiViisari = (Viisari)sekuntiViisari.clone();
         k.minuuttiViisari = (Viisari)minuuttiViisari.clone();

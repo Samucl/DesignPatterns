@@ -8,12 +8,12 @@ public class Main {
         Thread.sleep(5000);
         
         Kello kello2 = kello1.clone();
+        kello2.start();
         kello2.setNimi("Kello2");
         System.out.println("Kopioitu");
-        kello2.start();
+        Thread.sleep(5000);
+        System.out.println("Muutetaan kello1:n aikaa");
         
-        System.out.println(kello2 == kello1);
-        
-        //kello1.vaihdaAikaa(5, 25, 1);
+        kello1.vaihdaAikaa(5, 25, 1);
     }
 }
