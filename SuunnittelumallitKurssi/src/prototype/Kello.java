@@ -1,10 +1,8 @@
 package prototype;
 
 import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Kello extends Thread implements Cloneable{
+public class Kello extends Thread implements Cloneable {
     
     Viisari sekuntiViisari;
     Viisari minuuttiViisari;
@@ -36,10 +34,8 @@ public class Kello extends Thread implements Cloneable{
     public void run() {
         while(true){
             try {
-                
                 sleep(1000);
                 sekuntiViisari.tick();
-               
                 if(sekuntiViisari.getAika() % 60 == 0){
                     sekuntiViisari.resetAika();
                     minuuttiViisari.tick();
@@ -48,17 +44,16 @@ public class Kello extends Thread implements Cloneable{
                         tuntiViisari.tick();
                     }
                 }
-                
-                System.out.println(nimi + ": " + tuntiViisari.getAika() + "." + minuuttiViisari.getAika() + "." + sekuntiViisari.getAika());
-            } catch (InterruptedException ex) {
-            }
+            System.out.println(nimi + ": " + tuntiViisari.getAika() + "." + minuuttiViisari.getAika() + "." + sekuntiViisari.getAika());
+            } catch (InterruptedException ex) {}
         }
     }
     
     @Override
     public Kello clone() throws CloneNotSupportedException{
-        //Kello k = (Kello) super.clone(); //EI TOIMI KOSKA "EXTENDS THREAD"
-        Kello k = new Kello("kello"); //LUODAAN UUSI INSTANSSI KOSKA SÄIETTÄ EI VOI KLOONATA
+        //Kello k = (Kello) super.clone(); (Säikeen kloonaaminen paluttaa aina: CloneNotSupportedException)
+        //Joten täytyy luoda uusi säie, johon kloonataan viisarit.
+        Kello k = new Kello("");
         k.sekuntiViisari = (Viisari)sekuntiViisari.clone();
         k.minuuttiViisari = (Viisari)minuuttiViisari.clone();
         k.tuntiViisari = (Viisari)tuntiViisari.clone();

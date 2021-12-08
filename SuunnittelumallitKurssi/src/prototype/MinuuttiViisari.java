@@ -28,5 +28,4 @@ public class MinuuttiViisari implements Viisari, Cloneable {
     public Object clone() throws CloneNotSupportedException{
         return super.clone();
    }
-    
 }

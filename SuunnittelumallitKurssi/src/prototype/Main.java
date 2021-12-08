@@ -1,7 +1,7 @@
 package prototype;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, CloneNotSupportedException{
+    public static void main(String[] args) throws InterruptedException, CloneNotSupportedException {
         Kello kello1 = new Kello("Kello1");
         kello1.start();
         System.out.println("Syväkopioidaan 5 sekunnin päästä");

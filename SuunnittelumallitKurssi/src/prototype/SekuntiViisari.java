@@ -28,5 +28,4 @@ public class SekuntiViisari implements Viisari, Cloneable {
     public Object clone() throws CloneNotSupportedException{
         return super.clone();
    }
-    
 }
